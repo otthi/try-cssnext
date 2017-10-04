@@ -7,6 +7,7 @@ var runSequence = require('run-sequence');
 var cache = require('gulp-cached');
 var csso = require('gulp-csso');
 var watch = require('gulp-watch');
+var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var mqPacker = require('css-mqpacker');
@@ -31,6 +32,9 @@ gulp.task('cssCompile', function() {
     .pipe(plumber())
     .pipe(postcss(plugins))
     .pipe(csso())
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+    }))
     .pipe(gulp.dest('.'));
 });
 gulp.task('cssClean', del.bind(null, './*.css'));
