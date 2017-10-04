@@ -1,0 +1,35 @@
+{
+  "name": "try-cssnext",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/otthi/try-cssnext.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/otthi/try-cssnext/issues"
+  },
+  "homepage": "https://github.com/otthi/try-cssnext#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "css-mqpacker": "^6.0.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.11",
+    "postcss-custom-properties": "^6.1.0",
+    "run-sequence": "^2.2.0"
+  }
+}
