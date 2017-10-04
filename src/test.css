@@ -8,6 +8,9 @@ h1 {
 
 div {
   color: var(--color);
+  &:hover {
+    font-size: 16px;
+  }
 }
 
 @define-mixin foo {

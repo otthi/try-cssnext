@@ -12,6 +12,7 @@ var autoprefixer = require('autoprefixer');
 var mqPacker = require('css-mqpacker');
 var customProperties = require('postcss-custom-properties');
 var mixin = require('postcss-mixins');
+var nested = require('postcss-nested');
 
 var browsers = [
   '> 1% in JP'
@@ -23,7 +24,8 @@ gulp.task('cssCompile', function() {
     autoprefixer({browsers: browsers}),
     mqPacker,
     customProperties,
-    mixin
+    mixin,
+    nested
   ]
   return gulp.src('./src/**/*.css')
     .pipe(plumber())
