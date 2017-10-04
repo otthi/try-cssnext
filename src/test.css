@@ -9,3 +9,11 @@ h1 {
 div {
   color: var(--color);
 }
+
+@define-mixin foo {
+  display: block;
+}
+
+a {
+  @add-mixin foo;
+}

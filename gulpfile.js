@@ -10,7 +10,8 @@ var watch = require('gulp-watch');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var mqPacker = require('css-mqpacker');
-var customProperties = require('postcss-custom-properties')
+var customProperties = require('postcss-custom-properties');
+var mixin = require('postcss-mixins');
 
 var browsers = [
   '> 1% in JP'
@@ -21,7 +22,8 @@ gulp.task('cssCompile', function() {
     // doiuse({browsers: browsers}),
     autoprefixer({browsers: browsers}),
     mqPacker,
-    customProperties
+    customProperties,
+    mixin
   ]
   return gulp.src('./src/**/*.css')
     .pipe(plumber())
