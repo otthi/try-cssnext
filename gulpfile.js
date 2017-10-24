@@ -20,7 +20,11 @@ var browsers = [
 
 gulp.task('cssCompile', function() {
   var plugins = [
-    require('postcss-import'),
+    require('postcss-import')({
+      plugins: [
+        require('stylelint')
+      ]
+    }),
     // doiuse({browsers: browsers}),
     autoprefixer({browsers: browsers}),
     mqPacker,

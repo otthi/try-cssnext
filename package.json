@@ -33,6 +33,7 @@
     "postcss-import": "^11.0.0",
     "postcss-mixins": "^6.1.1",
     "postcss-nested": "^2.1.2",
-    "run-sequence": "^2.2.0"
+    "run-sequence": "^2.2.0",
+    "stylelint": "^8.2.0"
   }
 }
