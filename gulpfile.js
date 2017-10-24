@@ -30,7 +30,7 @@ gulp.task('cssCompile', function() {
   return gulp.src('./src/**/*.css')
     .pipe(plumber())
     .pipe(postcss(plugins))
-    .pipe(csso())
+    // .pipe(csso())
     .pipe(gulp.dest('.'));
 });
 gulp.task('cssClean', del.bind(null, './*.css'));
