@@ -1,10 +1,4 @@
-:root {
-  --color: red;
-}
-
-@define-mixin foo {
-  display: block;
-}
+@import '_import';
 
 h1 {
   color: var(--color);

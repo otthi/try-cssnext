@@ -1,0 +1,7 @@
+:root {
+  --color: red;
+}
+
+@define-mixin foo {
+  display: block;
+}
