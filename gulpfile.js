@@ -21,10 +21,12 @@ gulp.task('cssCompile', function() {
     require('stylelint'),
     require('postcss-reporter'),
     require('postcss-import'),
-    require('css-mqpacker'),
+    require('postcss-custom-media'),
     require('postcss-custom-properties'),
     require('postcss-mixins'),
     require('postcss-nested'),
+    require('css-mqpacker'),
+    require('prettier'),
     require('stylefmt')
   ]
   return gulp.src('./src/**/*.css')

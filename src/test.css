@@ -2,12 +2,22 @@
 
 h1 {
   color: var(--color);
+  @media (--small-viewport) {
+    font-size: 20px;
+  }
 }
 
 div {
-  color: var(--color);
+  color: var(--hoge-color);
   &:hover {
     font-size: 16px;
+    margin: 0;
+    background: #fff;
+  }
+  @media (--small-viewport) {
+    background: #fff;
+    font-size: 20px;
+    margin: 0;
   }
 }
 
