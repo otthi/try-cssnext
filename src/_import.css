@@ -1,0 +1,10 @@
+:root {
+  --color: #555;
+  --hoge-color: #f00;
+}
+
+@define-mixin foo {
+  display: block;
+}
+
+@custom-media --small-viewport (max-width: 30em);

@@ -9,11 +9,6 @@ var csso = require('gulp-csso');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mqPacker = require('css-mqpacker');
-var customProperties = require('postcss-custom-properties');
-var mixin = require('postcss-mixins');
-var nested = require('postcss-nested');
 
 var browsers = [
   '> 1% in JP'
@@ -21,20 +16,29 @@ var browsers = [
 
 gulp.task('cssCompile', function() {
   var plugins = [
-    // doiuse({browsers: browsers}),
-    autoprefixer({browsers: browsers}),
-    mqPacker,
-    customProperties,
-    mixin,
-    nested
+    require('autoprefixer',
+      {browsers: browsers}
+    ),
+    require('stylelint'),
+    require('postcss-reporter'),
+    require('postcss-import'),
+    require('postcss-custom-media'),
+    require('postcss-custom-properties'),
+    require('postcss-mixins'),
+    require('postcss-nested'),
+    require('css-mqpacker'),
+    require('prettier'),
+    require('stylefmt')
   ]
   return gulp.src('./src/**/*.css')
-    .pipe(plumber())
-    .pipe(postcss(plugins))
-    .pipe(csso())
-    .pipe(rename(function (path) {
-      path.basename += ".min";
+    .pipe(plumber({
+      errorHandler: notify.onError('<%= error.message %>')
     }))
+    .pipe(postcss(plugins))
+    // .pipe(csso())
+    // .pipe(rename(function (path) {
+    //   path.basename += ".min";
+    // }))
     .pipe(gulp.dest('.'));
 });
 gulp.task('cssClean', del.bind(null, './*.css'));

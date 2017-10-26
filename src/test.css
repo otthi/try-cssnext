@@ -1,20 +1,24 @@
-:root {
-  --color: red;
-}
+@import "_import";
 
 h1 {
   color: var(--color);
-}
-
-div {
-  color: var(--color);
-  &:hover {
-    font-size: 16px;
+  @media (--small-viewport) {
+    font-size: 20px;
   }
 }
 
-@define-mixin foo {
-  display: block;
+div {
+  color: var(--hoge-color);
+  &:hover {
+    font-size: 16px;
+    margin: 0;
+    background: #fff;
+  }
+  @media (--small-viewport) {
+    background: #fff;
+    font-size: 20px;
+    margin: 0;
+  }
 }
 
 a {
