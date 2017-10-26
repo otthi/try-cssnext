@@ -1,5 +1,5 @@
 :root {
-  --color: red;
+  --color: #555;
 }
 
 @define-mixin foo {

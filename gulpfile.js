@@ -8,11 +8,6 @@ var cache = require('gulp-cached');
 var csso = require('gulp-csso');
 var watch = require('gulp-watch');
 var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mqPacker = require('css-mqpacker');
-var customProperties = require('postcss-custom-properties');
-var mixin = require('postcss-mixins');
-var nested = require('postcss-nested');
 
 var browsers = [
   '> 1% in JP'
@@ -20,20 +15,22 @@ var browsers = [
 
 gulp.task('cssCompile', function() {
   var plugins = [
-    require('postcss-import')({
-      plugins: [
-        require('stylelint')
-      ]
-    }),
-    // doiuse({browsers: browsers}),
-    autoprefixer({browsers: browsers}),
-    mqPacker,
-    customProperties,
-    mixin,
-    nested
+    require('autoprefixer',
+      {browsers: browsers}
+    ),
+    require('stylelint'),
+    require('postcss-reporter'),
+    require('postcss-import'),
+    require('css-mqpacker'),
+    require('postcss-custom-properties'),
+    require('postcss-mixins'),
+    require('postcss-nested'),
+    require('stylefmt')
   ]
   return gulp.src('./src/**/*.css')
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError('<%= error.message %>')
+    }))
     .pipe(postcss(plugins))
     // .pipe(csso())
     .pipe(gulp.dest('.'));
