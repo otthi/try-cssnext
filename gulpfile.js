@@ -16,29 +16,34 @@ var browsers = [
 
 gulp.task('cssCompile', function() {
   var plugins = [
+    require('stylelint'),
     require('autoprefixer',
       {browsers: browsers}
     ),
-    require('stylelint'),
     require('postcss-reporter'),
     require('postcss-import'),
     require('postcss-custom-media'),
     require('postcss-custom-properties'),
     require('postcss-mixins'),
     require('postcss-nested'),
+    // require('prettier'),
+    require('stylefmt'),
     require('css-mqpacker'),
-    require('prettier'),
-    require('stylefmt')
+    require('cssnano')(
+      {autoprefixer: false}
+    )
   ]
-  return gulp.src('./src/**/*.css')
+  return gulp.src([
+      './src/**/*.css',
+      '!./src/**/_*.css'
+    ])
     .pipe(plumber({
       errorHandler: notify.onError('<%= error.message %>')
     }))
     .pipe(postcss(plugins))
-    // .pipe(csso())
-    // .pipe(rename(function (path) {
-    //   path.basename += ".min";
-    // }))
+    .pipe(rename(function (path) {
+      path.basename += ".min";
+    }))
     .pipe(gulp.dest('.'));
 });
 gulp.task('cssClean', del.bind(null, './*.css'));

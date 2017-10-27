@@ -2,6 +2,7 @@
 
 h1 {
   color: var(--color);
+  display: flex;
   @media (--small-viewport) {
     font-size: 20px;
   }

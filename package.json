@@ -20,7 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "css-mqpacker": "^6.0.1",
-    "csscomb": "^4.2.0",
+    "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",
