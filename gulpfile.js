@@ -5,7 +5,6 @@ var del = require('del');
 var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var cache = require('gulp-cached');
-var csso = require('gulp-csso');
 var watch = require('gulp-watch');
 var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
@@ -26,7 +25,6 @@ gulp.task('cssCompile', function() {
     require('postcss-custom-properties'),
     require('postcss-mixins'),
     require('postcss-nested'),
-    // require('prettier'),
     require('stylefmt'),
     require('css-mqpacker'),
     require('cssnano')(
@@ -55,6 +53,13 @@ gulp.task('build:css', function(callback) {
     callback
   );
 });
+
+gulp.task('format', function(callback) {
+  runSequence(
+    'cssFormat',
+    callback
+  );
+})
 
 gulp.task('watch', function() {
   watch(['./src/**/*.css'], function(event) {
