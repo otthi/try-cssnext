@@ -25,9 +25,10 @@ gulp.task('cssCompile', function() {
     require('postcss-custom-properties'),
     require('postcss-mixins'),
     require('postcss-nested'),
+    require('postcss-hexrgba'),
     require('stylefmt'),
     require('css-mqpacker'),
-    require('cssnano')(
+    require('cssnano',
       {autoprefixer: false}
     )
   ]
