@@ -21,6 +21,7 @@ gulp.task('cssCompile', function() {
     ),
     require('postcss-reporter'),
     require('postcss-import'),
+    require('postcss-apply'),
     require('postcss-custom-media'),
     require('postcss-custom-properties'),
     require('postcss-mixins'),
