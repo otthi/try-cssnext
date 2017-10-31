@@ -1,1 +1,1 @@
-h1{color:#555;display:-webkit-box;display:-ms-flexbox;display:flex}div{color:red}div:hover{font-size:16px;margin:0;background:#fff}a{display:block}@media (max-width:30em){div,h1{font-size:20px}div{background:#fff;margin:0}}
+h1{color:#555;display:-webkit-box;display:-ms-flexbox;display:flex}div{color:red}div:hover{font-size:16px;margin:0;background:#fff}a{display:inline-block;font-size:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media (max-width:30em){div,h1{font-size:20px}div{color:rgba(15,171,83,.8);background:hsla(0,0%,100%,.8);margin:0}}

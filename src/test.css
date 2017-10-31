@@ -19,12 +19,14 @@ div {
   }
 
   @media (--small-viewport) {
-    background: #fff;
+    color: rgba(#0fab53, .8);
+    background: rgba(#fff, .8);
     font-size: 20px;
     margin: 0;
   }
 }
 
 a {
-  @add-mixin foo;
+  @add-mixin foo 20px, inline-block;
+  @apply --truncate;
 }

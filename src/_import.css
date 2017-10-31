@@ -1,10 +1,16 @@
 :root {
   --color: #555;
   --hoge-color: #f00;
+  --truncate: {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  };
 }
 
-@define-mixin foo {
-  display: block;
+@define-mixin foo $name: 20px, $name1 {
+  display: $name1;
+  font-size: $name;
 }
 
 @custom-media --small-viewport (max-width: 30em);
