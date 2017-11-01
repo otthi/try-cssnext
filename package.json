@@ -31,6 +31,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-watch": "^4.3.11",
     "postcss-apply": "^0.8.0",
+    "postcss-csso": "^3.0.0",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
     "postcss-hexrgba": "^1.0.0",
@@ -42,5 +43,8 @@
     "run-sequence": "^2.2.0",
     "stylefmt": "^6.0.0",
     "stylelint": "^8.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
   }
 }

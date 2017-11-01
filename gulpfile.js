@@ -15,12 +15,11 @@ var browsers = [
 
 gulp.task('cssCompile', function() {
   var plugins = [
-    require('stylelint'),
+    require('postcss-import'),
     require('autoprefixer',
       {browsers: browsers}
     ),
     require('postcss-reporter'),
-    require('postcss-import'),
     require('postcss-apply'),
     require('postcss-custom-media'),
     require('postcss-custom-properties'),
@@ -29,9 +28,7 @@ gulp.task('cssCompile', function() {
     require('postcss-hexrgba'),
     require('stylefmt'),
     require('css-mqpacker'),
-    require('cssnano',
-      {autoprefixer: false}
-    )
+    require('postcss-csso')
   ]
   return gulp.src([
       './src/**/*.css',

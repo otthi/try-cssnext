@@ -1,4 +1,5 @@
-@import "_import";
+@import "normalize.css";
+@import "_import.css";
 
 h1 {
   color: var(--color);
